@@ -16,3 +16,7 @@ body {
 	margin: 0 auto;
 	border: 2px solid red;
 }
+
+.sketch-container {
+	width: 100%;
+}
