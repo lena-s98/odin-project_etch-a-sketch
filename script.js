@@ -1,11 +1,16 @@
-const sketchContainer = document.querySelector(".sketch-container");
-sketchContainer.style.cssText +=
-	"display: grid;grid-template-columns: repeat(16, 1fr);grid-template-rows: repeat(16, 1fr);";
+const gridContainer = document.querySelector(".grid-container");
+const divSelector = document.querySelectorAll(".grid-container > div");
 
-function createDiv() {
-	for (let i = 0; i < 16; i++) {
-		var div = document.createElement("div");
-		sketchContainer.appendChild(div);
+function createGrid(num) {
+	for (let i = 0; i < num * num; i++) {
+		const div = document.createElement("div");
+		div.classList.add("cell");
+		div.addEventListener("mouseover", () => {
+			div.classList.add("touched");
+		});
+		gridContainer.appendChild(div);
 	}
 }
-createDiv();
+
+const num = prompt("Enter a number up to 100 to create a grid of that size");
+createGrid(num);

@@ -11,12 +11,21 @@
 }
 
 body {
-	max-width: 1000px;
-	width: 100%;
-	margin: 0 auto;
 	border: 2px solid red;
 }
 
-.sketch-container {
-	width: 100%;
+.grid-container {
+	width: 50%;
+	height: 500px;
+	margin: 3rem auto;
+}
+
+.grid-container > div {
+	border: 1px solid red;
+	display: inline-block;
+	width: 100px;
+}
+
+.touched {
+	background-color: hsl(0, 0%, 19%);
 }
