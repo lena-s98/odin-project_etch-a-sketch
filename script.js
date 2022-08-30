@@ -1,8 +1,9 @@
+const val = prompt("Enter a number up to 100 to create a grid");
 const gridContainer = document.querySelector(".grid-container");
 const divSelector = document.querySelectorAll(".grid-container > div");
 
-function createGrid(num) {
-	for (let i = 0; i < num * num; i++) {
+function createGrid(val) {
+	for (let i = 0; i < val * val; i++) {
 		const div = document.createElement("div");
 		div.classList.add("cell");
 		div.addEventListener("mouseover", () => {
@@ -11,6 +12,9 @@ function createGrid(num) {
 		gridContainer.appendChild(div);
 	}
 }
+gridContainer.setAttribute(
+	"style",
+	`grid-template-columns: repeat(${val}, 1fr); grid-template-rows: repeat(${val}, 1fr);`
+);
 
-const num = prompt("Enter a number up to 100 to create a grid of that size");
-createGrid(num);
+createGrid(val);

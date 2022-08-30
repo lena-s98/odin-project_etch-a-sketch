@@ -11,21 +11,32 @@
 }
 
 body {
-	border: 2px solid red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: rgb(240, 240, 37);
+	margin-top: -30px;
 }
 
 .grid-container {
-	width: 50%;
-	height: 500px;
-	margin: 3rem auto;
+	margin-top: 50px;
+	display: inline-grid;
+	grid-template-columns: repeat(16, 2fr);
+	grid-template-rows: repeat(16, 2fr);
+	border: 5px solid white;
+	border-radius: 5px;
+	height: 575px;
+	width: 575px;
+	background-color: gray;
+	box-shadow: 10px 10px;
 }
 
-.grid-container > div {
-	border: 1px solid red;
-	display: inline-block;
-	width: 100px;
+.cell {
+	background-color: hsl(0, 0%, 65%);
+	border: 1px solid black;
 }
 
 .touched {
-	background-color: hsl(0, 0%, 19%);
+	background-color: hsl(0, 0%, 35%);
 }
