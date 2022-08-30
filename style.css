@@ -15,8 +15,14 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: rgb(240, 240, 37);
-	margin-top: -30px;
+	background-color: rgb(238, 238, 238);
+	margin-top: -2rem;
+}
+
+h1 {
+	font-size: 4.5rem;
+	margin: 4rem auto;
+	color: black;
 }
 
 .grid-container {
@@ -24,12 +30,12 @@ body {
 	display: inline-grid;
 	grid-template-columns: repeat(16, 2fr);
 	grid-template-rows: repeat(16, 2fr);
-	border: 5px solid white;
-	border-radius: 5px;
+	border: 2rem solid rgb(255, 79, 79);
+	border-radius: 30px;
 	height: 575px;
 	width: 575px;
 	background-color: gray;
-	box-shadow: 10px 10px;
+	/*box-shadow: 10px 10px;*/
 }
 
 .cell {
@@ -39,4 +45,17 @@ body {
 
 .touched {
 	background-color: hsl(0, 0%, 35%);
+}
+
+footer {
+	margin: 2rem auto;
+}
+
+footer > span {
+	font-size: 2rem;
+}
+
+footer > span > a {
+	text-decoration: none;
+	color: orangered;
 }

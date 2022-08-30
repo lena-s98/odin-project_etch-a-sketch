@@ -1,6 +1,7 @@
-const val = prompt("Enter a number up to 100 to create a grid");
+const sizeBtn = document.querySelector("#size-btn");
 const gridContainer = document.querySelector(".grid-container");
-const divSelector = document.querySelectorAll(".grid-container > div");
+const randomColorBtn = document.querySelector("#random-color");
+const resetBtn = document.querySelector("#reset-btn");
 
 function createGrid(val) {
 	for (let i = 0; i < val * val; i++) {
@@ -11,10 +12,26 @@ function createGrid(val) {
 		});
 		gridContainer.appendChild(div);
 	}
+	gridContainer.setAttribute(
+		"style",
+		`grid-template-columns: repeat(${val}, 1fr); grid-template-rows: repeat(${val}, 1fr);`
+	);
 }
-gridContainer.setAttribute(
-	"style",
-	`grid-template-columns: repeat(${val}, 1fr); grid-template-rows: repeat(${val}, 1fr);`
-);
 
-createGrid(val);
+function resetGrid() {
+	gridContainer.removeChild(div);
+}
+
+function reset() {
+	activeCell.forEach((div) => {
+		div.classList.remove("touched");
+	});
+}
+
+sizeBtn.addEventListener("click", () => {
+	const val = prompt("Enter number between 1 and 100");
+	//resetGrid();
+	createGrid(val);
+});
+
+resetBtn.addEventListener("click", reset());
