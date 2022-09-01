@@ -37,3 +37,9 @@ function colorSquare() {
 function changeColor(choice) {
 	color = choice;
 }
+
+function reset() {
+	let board = document.querySelector(".container");
+	let squares = board.querySelectorAll("div");
+	squares.forEach((div) => (div.style.backgroundColor = "white"));
+}
