@@ -1,4 +1,5 @@
 let color = "black";
+let click = false;
 
 function createGrid(size) {
 	let board = document.querySelector(".container");
@@ -11,7 +12,7 @@ function createGrid(size) {
 	for (let i = 0; i < amount; i++) {
 		let square = document.createElement("div");
 		square.style.backgroundColor = "white";
-		square.addEventListener("mouseover", colorSquare);
+		square.addEventListener("mousemove", colorSquare);
 		board.insertAdjacentElement("beforeend", square);
 	}
 }
@@ -27,10 +28,12 @@ function changeSize(input) {
 }
 
 function colorSquare() {
-	if (color === "rainbow") {
-		this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-	} else {
-		this.style.backgroundColor = color;
+	if (click) {
+		if (color === "rainbow") {
+			this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+		} else {
+			this.style.backgroundColor = color;
+		}
 	}
 }
 
@@ -43,3 +46,9 @@ function reset() {
 	let squares = board.querySelectorAll("div");
 	squares.forEach((div) => (div.style.backgroundColor = "white"));
 }
+
+document.querySelector("body").addEventListener("click", (e) => {
+	if (e.target.tagName != "BUTTON") {
+		click = !click;
+	}
+});
